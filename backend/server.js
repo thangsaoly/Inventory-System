@@ -2,6 +2,7 @@ import dotenv from "dotenv"
 import express from "express"
 import cors from "cors"
 import db from "./config/db.js"
+import authRoutes from "./routes/auth.routes.js"
 
 dotenv.config()
 
@@ -9,6 +10,9 @@ const app = express()
 
 app.use(cors())
 app.use(express.json())
+
+// Mount API routes
+app.use("/api/v1/auth", authRoutes)
 
 app.get("/health", (req, res) => {
     res.end("My Health is OK!")
