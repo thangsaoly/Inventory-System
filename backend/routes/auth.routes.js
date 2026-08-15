@@ -9,3 +9,4 @@ router.post("/register", validateRegisterInput, register)
 router.post("/login", validateLoginInput, login)
 
 export default router
+
